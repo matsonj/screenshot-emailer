@@ -26,6 +26,7 @@ jobs:
       uses: flameddd/screenshots-ci-action@master
       with:
         url: https://mdsinabox.com/nba/
+        fullPage: true
     - uses: actions/upload-artifact@v2 # Uplaod screenshots to Actions Artifacts via actions/upload-artifact@v2
       with:
         path: screenshots
