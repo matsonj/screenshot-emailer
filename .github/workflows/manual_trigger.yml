@@ -17,9 +17,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: take sreenshot
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: https://mdsinabox.com/nba/
-          destination: screenshot.png
-          width: 1024
+    - uses: actions/checkout@v2
+    - name: install puppeteer-headful
+      uses: mujo-code/puppeteer-headful@master # Required for headful puppeteer
+      env:
+        CI: 'true'
+    - name: screenshots-ci-action
+      uses: flameddd/screenshots-ci-action@master
+      with:
+        url: https://mdsinabox.com/nba/
+    - uses: actions/upload-artifact@v2 # Uplaod screenshots to Actions Artifacts via actions/upload-artifact@v2
+      with:
+        path: screenshots
+        name: Download-screenshots
