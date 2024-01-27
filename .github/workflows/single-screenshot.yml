@@ -20,7 +20,7 @@ jobs:
     - name: create path
       run: |
         cd ~
-        mkrdir screenshot
+        mkdir screenshot
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
       with:
