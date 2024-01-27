@@ -24,7 +24,9 @@ jobs:
         destination: screenshot.png
         full-page: true
         width: 720
-    - uses: actions/upload-artifact@v4 # Uplaod screenshots to Actions Artifacts via actions/upload-artifact@v2
+
+    # this isn't required, but I am adding it as an easy troubleshooting step
+    - uses: actions/upload-artifact@v4
       with:
-        path: /home/runner/work/_temp/
-        name: Download-screenshots
+        path: /home/runner/work/_temp/screenshot.png
+        compression-level: 0
