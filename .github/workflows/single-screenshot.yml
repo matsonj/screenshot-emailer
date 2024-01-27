@@ -1,15 +1,6 @@
 name: single-screenshot
 
-on:
-  workflow_dispatch:
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'What is the reason to trigger this manually?'
-        # Default value if no value is explicitly provided
-        default: 'testing github actions'
-        # Input has to be provided for the workflow to run
-        required: true
+on: workflow_dispatch
 
 jobs:
   screenshot:
