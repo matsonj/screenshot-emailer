@@ -17,16 +17,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: create path
-      run: |
-        cd ~
-        mkdir screenshot
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://mdsinabox.com/nba/
-        destination: screenshots/screenshot.png
+        destination: screenshot.png
     - uses: actions/upload-artifact@v4 # Uplaod screenshots to Actions Artifacts via actions/upload-artifact@v2
       with:
-        path: screenshots
+        path: /
         name: Download-screenshots
