@@ -24,9 +24,3 @@ jobs:
         destination: screenshot.png
         full-page: true
         width: 720
-
-    # this isn't required, but I am adding it as an easy troubleshooting step
-    - uses: actions/upload-artifact@v4
-      with:
-        path: /home/runner/work/_temp/screenshot.png
-        compression-level: 0
