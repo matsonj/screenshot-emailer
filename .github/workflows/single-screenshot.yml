@@ -18,12 +18,14 @@ jobs:
 
     steps:
     - name: create path
-      run: mkdir ~/screenshots
+      run: |
+        cd ~
+        mkrdir screenshot
     - name: Screenshot Website
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://mdsinabox.com/nba/
-        destination: ~/screenshots/screenshot.png
+        destination: screenshots/screenshot.png
     - uses: actions/upload-artifact@v4 # Uplaod screenshots to Actions Artifacts via actions/upload-artifact@v2
       with:
         path: screenshots
