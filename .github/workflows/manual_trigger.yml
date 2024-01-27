@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out
+      - name: take sreenshot
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://mdsinabox.com/nba/
