@@ -1,0 +1,30 @@
+name: single-screenshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'What is the reason to trigger this manually?'
+        # Default value if no value is explicitly provided
+        default: 'testing github actions'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  screenshot:
+    name: 'take screenshot'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: create path
+      run: mkdir screenshots
+    - name: Screenshot Website
+      uses: swinton/screenshot-website@v1.x
+      with:
+        source: https://mdsinabox.com/nba/
+        destination: screenshot/screenshot.png
+    - uses: actions/upload-artifact@v4 # Uplaod screenshots to Actions Artifacts via actions/upload-artifact@v2
+      with:
+        path: screenshots
+        name: Download-screenshots
